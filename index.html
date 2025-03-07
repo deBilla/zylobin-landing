@@ -3,7 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zylobin - Smart Waste Management Solutions</title>
+    <title>Zylobin - Smart Waste Management & Recycling Solutions | Sustainable Collection</title>
+    <meta name="description" content="Zylobin connects consumers with local waste collectors through a digital platform. Track recyclables, schedule pickups, and contribute to cleaner cities. Download our app today!" />
+    <meta name="keywords" content="waste management, recycling app, sustainable waste, waste collection, digital waste bins, recyclable waste" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Zylobin - Smart Waste Management Solutions" />
+    <meta property="og:description" content="Connect with local collectors, track your recyclables, and make your city cleaner with our waste management platform." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zylobin.com" />
+    <meta property="og:image" content="https://zylobin.com/assets/og-image.jpg" />
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zylobin - Smart Waste Management Solutions" />
+    <meta name="twitter:description" content="Connect with local collectors, track your recyclables, and make your city cleaner with our waste management platform." />
+    <meta name="twitter:image" content="https://zylobin.com/assets/twitter-image.jpg" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://zylobin.com" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
     <style>
       :root {
         --primary: #2ecc71;
@@ -50,11 +73,12 @@
       }
 
       .logo img {
-        width: 120px; /* Set your desired width */
-        height: 60px; /* Set your desired height */
-        object-fit: cover; /* Ensures the image covers the area */
-        object-position: center; /* Crops from the middle */
-        border-radius: 8px; /* Optional: adds rounded corners */
+        width: 120px;
+        height: 60px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 8px;
+        alt: "Zylobin waste management logo";
       }
 
       .nav-links {
@@ -425,6 +449,33 @@
         border-top: 1px solid rgba(255, 255, 255, 0.1);
       }
 
+      /* Added structured data styles */
+      .schema-data {
+        display: none;
+      }
+
+      /* Added accessibility styles */
+      .skip-to-content {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      
+      .skip-to-content:focus {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        background: var(--primary);
+        color: white;
+        z-index: 999;
+      }
+
       @media (max-width: 768px) {
         .nav-links {
           display: none;
@@ -439,302 +490,374 @@
         }
       }
     </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Zylobin",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Android, iOS",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A digital waste management platform connecting users with local waste collectors for sustainable recycling and waste management."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Zylobin",
+        "url": "https://zylobin.com",
+        "logo": "https://zylobin.com/assets/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61573612832998",
+          "https://x.com/zylobin20435",
+          "https://www.linkedin.com/company/zylobin",
+          "https://www.instagram.com/zylobin"
+        ]
+      }
+    </script>
   </head>
   <body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
     <header>
-      <nav>
+      <nav aria-label="Main navigation">
         <div class="logo">
-          <img src="assets/logo.png" alt="Logo" />
+          <a href="/" aria-label="Zylobin Home">
+            <img src="assets/logo.png" alt="Zylobin waste management logo" width="120" height="60" />
+          </a>
         </div>
         <div class="nav-links">
           <a href="#features">Features</a>
           <a href="#solutions">Solutions</a>
           <a href="#how-it-works">How It Works</a>
-          <!-- <a href="#testimonials">Testimonials</a> -->
+          <a href="#faq">FAQs</a>
         </div>
-        <button class="cta-button">Get Started</button>
+        <button class="cta-button" aria-label="Start using Zylobin">Get Started</button>
       </nav>
     </header>
 
-    <section class="hero">
-      <h1>Making Waste Collection Sustainable</h1>
-      <p>
-        Zylobin is a digital waste management platform connecting you with local
-        collectors. Track your recyclables, request pickups, and contribute to
-        cleaner cities.
-      </p>
-      <div class="cta-buttons">
-        <button class="cta-button">Download App</button>
-        <button class="secondary-button">Collector Sign Up</button>
-      </div>
-    </section>
+    <main id="main-content">
+      <section class="hero">
+        <h1>Smart Sustainable Waste Management Solutions</h1>
+        <p>
+          Zylobin is a comprehensive digital waste management platform connecting eco-conscious consumers with local collectors. Track your recyclables, schedule convenient pickups, and contribute to cleaner, more sustainable cities.
+        </p>
+        <div class="cta-buttons">
+          <button class="cta-button">Download App</button>
+          <button class="secondary-button">Collector Sign Up</button>
+        </div>
+      </section>
 
-    <section id="features" class="features">
-      <h2 class="section-title">Why Choose Zylobin?</h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>Digital Bins at Your Fingertips</h3>
-          <p>
-            Categorize and track recyclable waste items in different digital
-            bins through our easy-to-use mobile app.
-          </p>
+      <section id="features" class="features">
+        <h2 class="section-title">Why Choose Zylobin for Recycling?</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">📱</div>
+            <h3>Digital Recycling Bins at Your Fingertips</h3>
+            <p>
+              Easily categorize and track recyclable waste items in different digital
+              bins through our intuitive mobile app - organize plastic, paper, glass, and more.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">🚚</div>
+            <h3>Convenient Waste Pickups</h3>
+            <p>
+              Schedule on-demand pickups from local collection partners or find drop-off
+              locations at registered collection centers near your neighborhood.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">📊</div>
+            <h3>Track Your Environmental Impact</h3>
+            <p>
+              Monitor your recycling habits with detailed metrics and see the positive environmental
+              impact you're making on carbon reduction and sustainability.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">🌍</div>
+            <h3>Sustainable City Solutions</h3>
+            <p>
+              Contribute to eco-friendly waste management practices and help create
+              cleaner, greener urban environments for future generations.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">💼</div>
+            <h3>Waste Management B2B Dashboard</h3>
+            <p>
+              Waste collectors gain access to powerful data analytics, route
+              optimization tools, and customer management solutions.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">🔄</div>
+            <h3>Complete Recycling Ecosystem</h3>
+            <p>
+              A comprehensive platform connecting environmentally conscious consumers, professional waste collectors, and
+              certified recycling centers in one integrated system.
+            </p>
+          </div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🚚</div>
-          <h3>Convenient Pickups</h3>
-          <p>
-            Schedule pickups from collection partners or drop off at registered
-            collection centers near you.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Track Your Impact</h3>
-          <p>
-            Monitor your recycling habits and see the positive environmental
-            impact you're making.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌍</div>
-          <h3>Cleaner Cities</h3>
-          <p>
-            Contribute to sustainable waste management practices and help keep
-            our cities clean.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">💼</div>
-          <h3>B2B Dashboard</h3>
-          <p>
-            Waste collectors gain access to powerful data analytics and route
-            optimization tools.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔄</div>
-          <h3>Complete Ecosystem</h3>
-          <p>
-            A comprehensive platform connecting consumers, collectors, and
-            recycling centers.
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="solutions" class="solutions">
-      <h2 class="section-title">Our Solutions</h2>
-      <div class="solution-tabs">
-        <button class="tab-button active" id="consumer-tab">For Consumers</button>
-        <button class="tab-button" id="collector-tab">For Collectors</button>
-      </div>
-      <div class="tab-content" id="consumer-content">
-        <div class="tab-image">
-          <img
-            src="assets/mobile.png"
-            alt="Mobile app interface showing digital waste bins"
-          />
-          <img
-            src="assets/mobile-map.png"
-            alt="Mobile app interface showing collecion points"
-          />
+      <section id="solutions" class="solutions">
+        <h2 class="section-title">Sustainable Waste Management Solutions</h2>
+        <div class="solution-tabs" role="tablist">
+          <button class="tab-button active" id="consumer-tab" role="tab" aria-selected="true" aria-controls="consumer-content">For Consumers</button>
+          <button class="tab-button" id="collector-tab" role="tab" aria-selected="false" aria-controls="collector-content">For Waste Collectors</button>
         </div>
-        <div class="tab-info">
-          <h3>Zylobin Consumer App</h3>
-          <p>Our intuitive mobile application helps you:</p>
-          <ul>
-            <li>Create and manage digital waste bins by category</li>
-            <li>Record recyclable items with a simple scan</li>
-            <li>Find nearby collection centers</li>
-            <li>Schedule convenient pickup times</li>
-            <li>Track your recycling history and environmental impact</li>
-            <li>Earn rewards for consistent recycling habits</li>
-          </ul>
-          <button class="cta-button">Download Now</button>
+        <div class="tab-content" id="consumer-content" role="tabpanel" aria-labelledby="consumer-tab">
+          <div class="tab-image">
+            <img
+              src="assets/mobile.png"
+              alt="Zylobin mobile app interface showing digital waste bin categories"
+              width="300"
+              height="600"
+              loading="lazy"
+            />
+            <img
+              src="assets/mobile-map.png"
+              alt="Zylobin app map view showing nearby recycling collection points"
+              width="300"
+              height="600"
+              loading="lazy"
+            />
+          </div>
+          <div class="tab-info">
+            <h3>Zylobin Recycling Consumer App</h3>
+            <p>Our intuitive mobile application helps you manage waste sustainably:</p>
+            <ul>
+              <li>Create and manage digital waste bins by recyclable category</li>
+              <li>Record recyclable items with a simple barcode scan</li>
+              <li>Find nearby eco-friendly collection centers</li>
+              <li>Schedule convenient pickup times from local collectors</li>
+              <li>Track your recycling history and personal environmental impact</li>
+              <li>Earn green rewards for consistent recycling habits</li>
+            </ul>
+            <button class="cta-button">Download Recycling App</button>
+          </div>
         </div>
-      </div>
-      
-      <div class="tab-content tab-content-collectors" id="collector-content">
-        <div class="tab-info">
-          <h3>Zylobin Collector Platform</h3>
-          <p>Our subscription-based B2B platform empowers waste collectors with:</p>
-          <ul>
-            <li>Real-time waste item tracking and analytics</li>
-            <li>Smart route optimization for efficient collections</li>
-            <li>Dashboard for monitoring user activity and waste accumulation</li>
-            <li>Integration with your existing collection operations</li>
-          </ul>
-          
-          <h4 style="margin-top: 20px; margin-bottom: 10px;">Choose Your Subscription Plan</h4>
-          
-          <div class="subscription-plans">
-            <div class="plan-card">
-              <div class="plan-name">Free</div>
-              <div class="plan-price">$0<span>/month</span></div>
-              <ul class="plan-features">
-                <li>Access to basic dashboard</li>
-                <li><span class="highlight">1 collection points</span> management</li>
-                <li>Weekly data reports</li>
-                <li>Email support</li>
-              </ul>
-              <button class="cta-button">Get Started</button>
-            </div>
-
-            <div class="plan-card">
-              <div class="plan-name">Starter</div>
-              <div class="plan-price">$249<span>/month</span></div>
-              <ul class="plan-features">
-                <li>Access to basic dashboard</li>
-                <li>View up to <span class="highlight">500 users</span> in your area</li>
-                <li><span class="highlight">10 collection points</span> management</li>
-                <li>Basic route optimization</li>
-                <li>Weekly data reports</li>
-                <li>Email support</li>
-              </ul>
-              <button class="cta-button">Get Started</button>
-            </div>
+        
+        <div class="tab-content tab-content-collectors" id="collector-content" role="tabpanel" aria-labelledby="collector-tab" hidden>
+          <div class="tab-info">
+            <h3>Zylobin Waste Collector Platform</h3>
+            <p>Our subscription-based B2B platform empowers waste collection businesses with:</p>
+            <ul>
+              <li>Real-time recyclable waste tracking and analytics dashboard</li>
+              <li>Smart route optimization for efficient collections and reduced carbon footprint</li>
+              <li>Comprehensive dashboard for monitoring user activity and waste accumulation</li>
+              <li>Seamless integration with your existing collection operations</li>
+            </ul>
             
-            <div class="plan-card featured">
-              <div class="plan-name">Professional</div>
-              <div class="plan-price">$999<span>/month</span></div>
-              <ul class="plan-features">
-                <li>Advanced analytics dashboard</li>
-                <li>View up to <span class="highlight">20,000 users</span> in your area</li>
-                <li><span class="highlight">50 collection points</span> management</li>
-                <li>Advanced route optimization</li>
-                <li>Real-time waste tracking</li>
-                <li>Daily data reports</li>
-                <li>Priority support</li>
-              </ul>
-              <button class="cta-button">Sign Up Now</button>
-            </div>
+            <h4 style="margin-top: 20px; margin-bottom: 10px;">Choose Your Waste Management Subscription Plan</h4>
             
-            <div class="plan-card">
-              <div class="plan-name">Enterprise</div>
-              <div class="plan-price"><span>Contact our team</span></div>
-              <ul class="plan-features">
-                <li>Full-featured dashboard</li>
-                <li><span class="highlight">Unlimited users</span> visibility</li>
-                <li><span class="highlight">Unlimited collection points</span></li>
-                <li>AI-powered route optimization</li>
-                <li>Predictive waste analytics</li>
-                <li>Custom reporting</li>
-                <li>API integrations</li>
-                <li>24/7 dedicated support</li>
-              </ul>
-              <button class="cta-button">Contact Sales</button>
+            <div class="subscription-plans">
+              <div class="plan-card">
+                <div class="plan-name">Free Trial</div>
+                <div class="plan-price">$0<span>/month</span></div>
+                <ul class="plan-features">
+                  <li>Access to basic waste management dashboard</li>
+                  <li><span class="highlight">1 collection points</span> management</li>
+                  <li>Weekly recycling data reports</li>
+                  <li>Email customer support</li>
+                </ul>
+                <button class="cta-button">Start Free Trial</button>
+              </div>
+
+              <div class="plan-card">
+                <div class="plan-name">Starter Plan</div>
+                <div class="plan-price">$249<span>/month</span></div>
+                <ul class="plan-features">
+                  <li>Access to basic collection dashboard</li>
+                  <li>View up to <span class="highlight">500 recycling users</span> in your service area</li>
+                  <li><span class="highlight">10 collection points</span> management</li>
+                  <li>Basic collection route optimization</li>
+                  <li>Weekly waste analytics reports</li>
+                  <li>Priority email support</li>
+                </ul>
+                <button class="cta-button">Start Collection Business</button>
+              </div>
+              
+              <div class="plan-card featured">
+                <div class="plan-name">Professional Collector</div>
+                <div class="plan-price">$999<span>/month</span></div>
+                <ul class="plan-features">
+                  <li>Advanced waste analytics dashboard</li>
+                  <li>View up to <span class="highlight">20,000 recycling users</span> in your service area</li>
+                  <li><span class="highlight">50 collection points</span> management</li>
+                  <li>Advanced route optimization for fuel efficiency</li>
+                  <li>Real-time recyclable waste tracking</li>
+                  <li>Daily data reports and insights</li>
+                  <li>Priority phone and email support</li>
+                </ul>
+                <button class="cta-button">Upgrade Collection Business</button>
+              </div>
+              
+              <div class="plan-card">
+                <div class="plan-name">Enterprise Waste Management</div>
+                <div class="plan-price"><span>Contact our team</span></div>
+                <ul class="plan-features">
+                  <li>Full-featured waste management dashboard</li>
+                  <li><span class="highlight">Unlimited users</span> visibility</li>
+                  <li><span class="highlight">Unlimited collection points</span></li>
+                  <li>AI-powered route optimization for maximum efficiency</li>
+                  <li>Predictive waste analytics and forecasting</li>
+                  <li>Custom reporting and business intelligence</li>
+                  <li>API integrations with existing systems</li>
+                  <li>24/7 dedicated customer support</li>
+                </ul>
+                <button class="cta-button">Contact Enterprise Sales</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="how-it-works" class="how-it-works">
-      <h2 class="section-title">How It Works</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <div>
-            <h3>Download & Register</h3>
-            <p>
-              Get the Zylobin app on your smartphone and create your account in
-              minutes.
-            </p>
+      <section id="how-it-works" class="how-it-works">
+        <h2 class="section-title">How Zylobin Recycling Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number" aria-hidden="true">1</div>
+            <div>
+              <h3>Download & Register For Recycling</h3>
+              <p>
+                Get the Zylobin recycling app on your smartphone and create your eco-friendly
+                account in just minutes.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number" aria-hidden="true">2</div>
+            <div>
+              <h3>Sort Your Recyclable Waste</h3>
+              <p>
+                Use the app to categorize recyclable items into digital bins
+                (plastic, paper, glass, metal, e-waste, and more)
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number" aria-hidden="true">3</div>
+            <div>
+              <h3>Choose Your Recycling Option</h3>
+              <p>
+                Select a nearby eco-friendly collection center for drop-off or schedule a
+                convenient pickup from our verified collection partners.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number" aria-hidden="true">4</div>
+            <div>
+              <h3>Track Your Environmental Impact</h3>
+              <p>
+                View your detailed recycling statistics and personal environmental contribution on
+                your personalized sustainability dashboard.
+              </p>
+            </div>
           </div>
         </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <div>
-            <h3>Sort Your Waste</h3>
-            <p>
-              Use the app to categorize recyclable items into digital bins
-              (plastic, paper, glass, etc.)
-            </p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <div>
-            <h3>Choose Your Option</h3>
-            <p>
-              Select a nearby collection center for drop-off or schedule a
-              pickup from our collection partners.
-            </p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">4</div>
-          <div>
-            <h3>Track Your Impact</h3>
-            <p>
-              View your recycling statistics and environmental contribution on
-              your personalized dashboard.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Testimonials section is hidden as requested -->
+      <!-- Added FAQ Section for SEO -->
+      <section id="faq" class="features">
+        <h2 class="section-title">Frequently Asked Questions About Recycling</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>What types of waste can I recycle with Zylobin?</h3>
+            <p>
+              Zylobin supports recycling of most common materials including plastic, paper, cardboard, glass, metal, e-waste, textiles, and in some locations, organic waste. The app will show which materials are accepted in your area.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>How much does the Zylobin consumer app cost?</h3>
+            <p>
+              The Zylobin consumer app is completely free to download and use for all basic recycling management features. Premium features may be available through in-app subscription options.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>How quickly can I get a waste pickup scheduled?</h3>
+            <p>
+              Pickup availability varies by location and collector partner schedules. In most urban areas, you can schedule a pickup within 24-48 hours, while same-day pickups may be available in some regions.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>How do I become a waste collector partner?</h3>
+            <p>
+              Waste collection businesses can register through our Collector Portal. After verification of your business credentials and service areas, you'll gain access to our platform and can choose from our subscription plans.
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <section class="cta">
-      <h2>Join the Zylobin Community Today</h2>
-      <p>
-        Be part of the solution for sustainable waste management and cleaner
-        cities.
-      </p>
-      <div class="cta-buttons">
-        <button class="secondary-button">Download Consumer App</button>
-        <button class="secondary-button">Register as Collector</button>
-      </div>
-    </section>
+      <section class="cta">
+        <h2>Join the Zylobin Recycling Community Today</h2>
+        <p>
+          Be part of the sustainable solution for eco-friendly waste management and cleaner, greener
+          cities for future generations.
+        </p>
+        <div class="cta-buttons">
+          <button class="secondary-button">Download Free Recycling App</button>
+          <button class="secondary-button">Register as Waste Collector</button>
+        </div>
+      </section>
+    </main>
 
     <footer>
       <div class="footer-content">
         <div class="footer-column">
-          <h3>Zylobin</h3>
+          <h3>Zylobin Recycling</h3>
           <p>
-            Making waste collection sustainable and our cities cleaner, one bin
-            at a time.
+            Making waste collection sustainable and our cities cleaner through innovative
+            recycling technology and community engagement.
           </p>
           <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61573612832998" class="social-icon">f</a>
-            <a href="https://x.com/zylobin20435" class="social-icon">x</a>
-            <a href="https://www.linkedin.com/company/zylobin" class="social-icon">in</a>
-            <a href="#" class="social-icon">ig</a>
+            <a href="https://www.facebook.com/profile.php?id=61573612832998" class="social-icon" aria-label="Facebook">f</a>
+            <a href="https://x.com/zylobin20435" class="social-icon" aria-label="X (Twitter)">x</a>
+            <a href="https://www.linkedin.com/company/zylobin" class="social-icon" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-icon" aria-label="Instagram">ig</a>
           </div>
         </div>
         <div class="footer-column">
-          <h3>Solutions</h3>
+          <h3>Recycling Solutions</h3>
           <ul class="footer-links">
-            <li><a href="#">Consumer App</a></li>
-            <li><a href="#">Collector Platform</a></li>
-            <li><a href="#">Collection Centers</a></li>
-            <li><a href="#">Enterprise Solutions</a></li>
+            <li><a href="#">Consumer Recycling App</a></li>
+            <li><a href="#">Waste Collector Platform</a></li>
+            <li><a href="#">Recycling Collection Centers</a></li>
+            <li><a href="#">Enterprise Waste Solutions</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h3>Company</h3>
           <ul class="footer-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Mission</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Press</a></li>
+            <li><a href="#">About Zylobin</a></li>
+            <li><a href="#">Our Sustainability Mission</a></li>
+            <li><a href="#">Careers in Recycling</a></li>
+            <li><a href="#">Press & Media</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h3>Support</h3>
           <ul class="footer-links">
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Recycling Help Center</a></li>
+            <li><a href="#">Contact Support Team</a></li>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Terms of Service</a></li>
           </ul>
         </div>
       </div>
       <div class="copyright">
-        <p>&copy; 2025 Zylobin. All rights reserved.</p>
+        <p>&copy; 2025 Zylobin Sustainable Waste Management. All rights reserved.</p>
       </div>
     </footer>
 
