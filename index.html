@@ -182,20 +182,106 @@
         margin: 0 auto;
       }
 
+      .tab-content-collectors {
+        display: none;
+      }
+
       .tab-image {
         flex: 1;
         border-radius: 10px;
         overflow: hidden;
+        display: flex;
       }
 
       .tab-image img {
-        width: 100%;
-        height: auto;
+        width: 50%;
+        padding: 10px;
+        height: 50%;
         display: block;
       }
 
       .tab-info {
         flex: 1;
+      }
+
+      .subscription-plans {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .plan-card {
+        background-color: var(--light);
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+        border: 2px solid transparent;
+      }
+
+      .plan-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .plan-card.featured {
+        border-color: var(--primary);
+        position: relative;
+      }
+
+      .plan-card.featured::after {
+        content: "Popular";
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        background-color: var(--primary);
+        color: white;
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .plan-name {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+      }
+
+      .plan-price {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .plan-price span {
+        font-size: 1rem;
+        color: #777;
+      }
+
+      .plan-features {
+        list-style: none;
+        margin-bottom: 1.5rem;
+      }
+
+      .plan-features li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .plan-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: 700;
+      }
+      
+      .highlight {
+        font-weight: 600;
+        color: var(--primary);
       }
 
       .how-it-works {
@@ -230,47 +316,6 @@
         border-radius: 50%;
         font-weight: 700;
         flex-shrink: 0;
-      }
-
-      .testimonials {
-        padding: 5rem 5%;
-        background-color: white;
-      }
-
-      .testimonial-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      .testimonial-card {
-        background-color: var(--light);
-        border-radius: 10px;
-        padding: 2rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
-
-      .testimonial-text {
-        font-style: italic;
-        margin-bottom: 1rem;
-      }
-
-      .testimonial-author {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .author-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: var(--accent);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-weight: 700;
       }
 
       .cta {
@@ -399,13 +444,13 @@
     <header>
       <nav>
         <div class="logo">
-            <img src="assets/logo.png" alt="Logo">
+          <img src="assets/logo.png" alt="Logo" />
         </div>
         <div class="nav-links">
           <a href="#features">Features</a>
           <a href="#solutions">Solutions</a>
           <a href="#how-it-works">How It Works</a>
-          <a href="#testimonials">Testimonials</a>
+          <!-- <a href="#testimonials">Testimonials</a> -->
         </div>
         <button class="cta-button">Get Started</button>
       </nav>
@@ -481,14 +526,18 @@
     <section id="solutions" class="solutions">
       <h2 class="section-title">Our Solutions</h2>
       <div class="solution-tabs">
-        <button class="tab-button active">For Consumers</button>
-        <button class="tab-button">For Collectors</button>
+        <button class="tab-button active" id="consumer-tab">For Consumers</button>
+        <button class="tab-button" id="collector-tab">For Collectors</button>
       </div>
-      <div class="tab-content">
+      <div class="tab-content" id="consumer-content">
         <div class="tab-image">
           <img
-            src="/api/placeholder/400/320"
+            src="assets/mobile.png"
             alt="Mobile app interface showing digital waste bins"
+          />
+          <img
+            src="assets/mobile-map.png"
+            alt="Mobile app interface showing collecion points"
           />
         </div>
         <div class="tab-info">
@@ -503,6 +552,80 @@
             <li>Earn rewards for consistent recycling habits</li>
           </ul>
           <button class="cta-button">Download Now</button>
+        </div>
+      </div>
+      
+      <div class="tab-content tab-content-collectors" id="collector-content">
+        <div class="tab-info">
+          <h3>Zylobin Collector Platform</h3>
+          <p>Our subscription-based B2B platform empowers waste collectors with:</p>
+          <ul>
+            <li>Real-time waste item tracking and analytics</li>
+            <li>Smart route optimization for efficient collections</li>
+            <li>Dashboard for monitoring user activity and waste accumulation</li>
+            <li>Integration with your existing collection operations</li>
+          </ul>
+          
+          <h4 style="margin-top: 20px; margin-bottom: 10px;">Choose Your Subscription Plan</h4>
+          
+          <div class="subscription-plans">
+            <div class="plan-card">
+              <div class="plan-name">Free</div>
+              <div class="plan-price">$0<span>/month</span></div>
+              <ul class="plan-features">
+                <li>Access to basic dashboard</li>
+                <li><span class="highlight">1 collection points</span> management</li>
+                <li>Weekly data reports</li>
+                <li>Email support</li>
+              </ul>
+              <button class="cta-button">Get Started</button>
+            </div>
+
+            <div class="plan-card">
+              <div class="plan-name">Starter</div>
+              <div class="plan-price">$249<span>/month</span></div>
+              <ul class="plan-features">
+                <li>Access to basic dashboard</li>
+                <li>View up to <span class="highlight">500 users</span> in your area</li>
+                <li><span class="highlight">10 collection points</span> management</li>
+                <li>Basic route optimization</li>
+                <li>Weekly data reports</li>
+                <li>Email support</li>
+              </ul>
+              <button class="cta-button">Get Started</button>
+            </div>
+            
+            <div class="plan-card featured">
+              <div class="plan-name">Professional</div>
+              <div class="plan-price">$999<span>/month</span></div>
+              <ul class="plan-features">
+                <li>Advanced analytics dashboard</li>
+                <li>View up to <span class="highlight">20,000 users</span> in your area</li>
+                <li><span class="highlight">50 collection points</span> management</li>
+                <li>Advanced route optimization</li>
+                <li>Real-time waste tracking</li>
+                <li>Daily data reports</li>
+                <li>Priority support</li>
+              </ul>
+              <button class="cta-button">Sign Up Now</button>
+            </div>
+            
+            <div class="plan-card">
+              <div class="plan-name">Enterprise</div>
+              <div class="plan-price"><span>Contact our team</span></div>
+              <ul class="plan-features">
+                <li>Full-featured dashboard</li>
+                <li><span class="highlight">Unlimited users</span> visibility</li>
+                <li><span class="highlight">Unlimited collection points</span></li>
+                <li>AI-powered route optimization</li>
+                <li>Predictive waste analytics</li>
+                <li>Custom reporting</li>
+                <li>API integrations</li>
+                <li>24/7 dedicated support</li>
+              </ul>
+              <button class="cta-button">Contact Sales</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -553,53 +676,7 @@
       </div>
     </section>
 
-    <section id="testimonials" class="testimonials">
-      <h2 class="section-title">What Our Users Say</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <p class="testimonial-text">
-            "Zylobin has completely changed how I manage my recyclables. The app
-            makes it so easy to organize everything, and the pickup service is
-            incredibly convenient!"
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">S</div>
-            <div>
-              <h4>Sarah J.</h4>
-              <p>App User</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-text">
-            "As a waste collection company, the Zylobin B2B platform has
-            revolutionized our operations. The route optimization tools have cut
-            our fuel costs by 30% while helping us collect more efficiently."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">M</div>
-            <div>
-              <h4>Mike T.</h4>
-              <p>Collection Partner</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-text">
-            "I've been using Zylobin for six months now, and I can actually see
-            the difference it's making. The impact tracking feature shows me how
-            much waste I've diverted from landfills."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">R</div>
-            <div>
-              <h4>Rachel K.</h4>
-              <p>App User</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Testimonials section is hidden as requested -->
 
     <section class="cta">
       <h2>Join the Zylobin Community Today</h2>
@@ -660,5 +737,29 @@
         <p>&copy; 2025 Zylobin. All rights reserved.</p>
       </div>
     </footer>
+
+    <script>
+      // Tab switching functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const consumerTab = document.getElementById('consumer-tab');
+        const collectorTab = document.getElementById('collector-tab');
+        const consumerContent = document.getElementById('consumer-content');
+        const collectorContent = document.getElementById('collector-content');
+        
+        consumerTab.addEventListener('click', function() {
+          consumerTab.classList.add('active');
+          collectorTab.classList.remove('active');
+          consumerContent.style.display = 'flex';
+          collectorContent.style.display = 'none';
+        });
+        
+        collectorTab.addEventListener('click', function() {
+          collectorTab.classList.add('active');
+          consumerTab.classList.remove('active');
+          collectorContent.style.display = 'flex';
+          consumerContent.style.display = 'none';
+        });
+      });
+    </script>
   </body>
 </html>
