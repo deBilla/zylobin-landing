@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support - Zylobin Waste Management & Recycling Solutions</title>
+    <meta
+      name="description"
+      content="Get help with Zylobin's waste management and recycling solutions. Submit support requests and join community discussions."
+    />
+    <meta
+      name="keywords"
+      content="waste management support, recycling help, Zylobin support, waste collection assistance"
+    />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Support - Zylobin Waste Management" />
+    <meta
+      property="og:description"
+      content="Get help with Zylobin's waste management and recycling solutions. Submit your questions and join community discussions."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zylobin.com/support" />
+    <meta
+      property="og:image"
+      content="https://zylobin.com/assets/og-image.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <style>
+      :root {
+        --primary: #2ecc71;
+        --secondary: #27ae60;
+        --dark: #2c3e50;
+        --light: #ecf0f1;
+        --accent: #3498db;
+        --error: #e74c3c;
+        --success: #2ecc71;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        color: var(--dark);
+        background-color: var(--light);
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        width: 120px;
+        height: 60px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 8px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .cta-button {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .cta-button:hover {
+        background-color: var(--secondary);
+      }
+
+      main {
+        padding: 10rem 5% 5rem;
+      }
+
+      .support-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .support-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 4rem;
+        justify-content: center;
+      }
+
+      .support-option {
+        flex: 1;
+        min-width: 300px;
+        max-width: 350px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .support-option:hover {
+        transform: translateY(-5px);
+      }
+
+      .support-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .support-option h3 {
+        margin-bottom: 1rem;
+      }
+
+      .form-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 4rem;
+      }
+
+      .form-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .form-input,
+      .form-textarea,
+      .form-select {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      .form-textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-col {
+        flex: 1;
+      }
+
+      .submit-button {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .submit-button:hover {
+        background-color: var(--secondary);
+      }
+
+      .form-error {
+        color: var(--error);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      .form-success {
+        color: var(--success);
+        text-align: center;
+        padding: 1rem;
+        border-radius: 5px;
+        background-color: rgba(46, 204, 113, 0.1);
+        margin-top: 1rem;
+        display: none;
+      }
+
+      .discussion-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .discussion-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .faq-section {
+        margin-bottom: 4rem;
+      }
+
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background-color: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1rem;
+      }
+
+      .faq-question {
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+        padding-right: 30px;
+      }
+
+      .faq-question::after {
+        content: "+";
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: transform 0.3s;
+      }
+
+      .faq-question.active::after {
+        content: "-";
+      }
+
+      .faq-answer {
+        margin-top: 1rem;
+        display: none;
+      }
+
+      .faq-answer.show {
+        display: block;
+      }
+
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 3rem 5%;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .footer-column {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-column h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-links a {
+        color: var(--light);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: var(--primary);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: var(--dark);
+        transition: background-color 0.3s;
+      }
+
+      .social-icon:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .giscus {
+        margin-top: 2rem;
+      }
+
+      .skip-to-content {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .skip-to-content:focus {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        background: var(--primary);
+        color: white;
+        z-index: 999;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .form-row {
+          flex-direction: column;
+          gap: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <header>
+      <nav aria-label="Main navigation">
+        <div class="logo">
+          <a href="/" aria-label="Zylobin Home">
+            <img
+              src="assets/logo.png"
+              alt="Zylobin waste management logo"
+              width="120"
+              height="60"
+            />
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="/#features">Features</a>
+          <a href="/#solutions">Solutions</a>
+          <a href="/#how-it-works">How It Works</a>
+          <a href="/#faq">FAQs</a>
+          <a href="/support" aria-current="page">Support</a>
+        </div>
+        <button class="cta-button" aria-label="Start using Zylobin">
+          Get Started
+        </button>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <div class="support-container">
+        <h1 class="section-title">Zylobin Support Center</h1>
+        <p class="section-subtitle">
+          Need help with our waste management solutions? Our support team is
+          ready to assist you with any questions or issues you may have.
+        </p>
+
+        <div class="support-options">
+          <div class="support-option">
+            <div class="support-icon" aria-hidden="true">📱</div>
+            <h3>App Support</h3>
+            <p>
+              Having trouble with the Zylobin app? Get help with installation,
+              account setup, and feature questions.
+            </p>
+          </div>
+          <div class="support-option">
+            <div class="support-icon" aria-hidden="true">🚚</div>
+            <h3>Collection Services</h3>
+            <p>
+              Need assistance with scheduling pickups, finding collection
+              centers, or tracking your waste collection?
+            </p>
+          </div>
+          <div class="support-option">
+            <div class="support-icon" aria-hidden="true">💼</div>
+            <h3>Business Solutions</h3>
+            <p>
+              Get help with your waste collector dashboard, subscription plans,
+              or enterprise waste management solutions.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-section">
+          <h2 class="form-title">Frequently Asked Questions</h2>
+          <div class="faq-container">
+            <div class="faq-item">
+              <h3 class="faq-question">
+                How do I reset my Zylobin app password?
+              </h3>
+              <div class="faq-answer">
+                <p>
+                  To reset your password, open the Zylobin app and tap on
+                  "Forgot Password" on the login screen. Enter your registered
+                  email address and follow the instructions sent to your email
+                  to create a new password.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3 class="faq-question">How can I cancel a scheduled pickup?</h3>
+              <div class="faq-answer">
+                <p>
+                  You can cancel a scheduled pickup through the app up to 4
+                  hours before the scheduled time. Go to "My Pickups" in the
+                  app, select the pickup you want to cancel, and tap on "Cancel
+                  Pickup". Follow the prompts to confirm the cancellation.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3 class="faq-question">
+                What should I do if the collector didn't pick up my waste?
+              </h3>
+              <div class="faq-answer">
+                <p>
+                  If your scheduled pickup was missed, please report it through
+                  the app by going to "My Pickups" and selecting "Report Issue"
+                  for the specific pickup. Our team will investigate and follow
+                  up with you within 24 hours.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3 class="faq-question">
+                How do I change my collection address?
+              </h3>
+              <div class="faq-answer">
+                <p>
+                  To change your collection address, go to your account settings
+                  by tapping on your profile icon. Select "Addresses" and then
+                  "Edit" next to the address you want to change, or "Add New
+                  Address" to add a new location. Follow the prompts to save
+                  your updated address information.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3 class="faq-question">How do I sort my waste properly?</h3>
+              <div class="faq-answer">
+                <p>
+                  Proper waste sorting is essential for effective recycling.
+                  Check the "Waste Guide" section in the app for detailed
+                  instructions on how to sort different types of waste. You can
+                  also scan item barcodes using the app's camera feature to get
+                  specific disposal instructions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-container">
+          <h2 class="form-title">Contact Support</h2>
+          <form id="support-form" aria-labelledby="support-form-title">
+            <div class="form-row">
+              <div class="form-col">
+                <div class="form-group">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-input"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-col">
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="support-type" class="form-label">Support Type</label>
+              <select
+                id="support-type"
+                name="support-type"
+                class="form-select"
+                required
+              >
+                <option value="">Select support type</option>
+                <option value="app">App Support</option>
+                <option value="collection">Collection Services</option>
+                <option value="business">Business Solutions</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-textarea"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-button">Submit Request</button>
+            <div class="form-success" id="form-success">
+              Your support request has been submitted successfully. We'll get
+              back to you within 24 hours.
+            </div>
+          </form>
+        </div>
+
+        <div class="discussion-container">
+          <h2 class="discussion-title">Community Discussions</h2>
+          <p>
+            Join our community discussions to connect with other Zylobin users,
+            share tips, and get advice on waste management best practices.
+          </p>
+          <div class="giscus"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Zylobin</h3>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Solutions</h3>
+          <ul class="footer-links">
+            <li><a href="/solutions/residential">Residential</a></li>
+            <li><a href="/solutions/commercial">Commercial</a></li>
+            <li><a href="/solutions/municipal">Municipal</a></li>
+            <li><a href="/solutions/industrial">Industrial</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="/resources/guides">Guides</a></li>
+            <li><a href="/resources/case-studies">Case Studies</a></li>
+            <li><a href="/resources/whitepapers">Whitepapers</a></li>
+            <li><a href="/resources/webinars">Webinars</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a
+              href="https://facebook.com/zylobin"
+              class="social-icon"
+              aria-label="Facebook"
+              >f</a
+            >
+            <a
+              href="https://twitter.com/zylobin"
+              class="social-icon"
+              aria-label="Twitter"
+              >t</a
+            >
+            <a
+              href="https://linkedin.com/company/zylobin"
+              class="social-icon"
+              aria-label="LinkedIn"
+              >in</a
+            >
+            <a
+              href="https://instagram.com/zylobin"
+              class="social-icon"
+              aria-label="Instagram"
+              >ig</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>
+          &copy; 2024 Zylobin Waste Management & Recycling Solutions. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // FAQ Toggle
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+          const isOpen = answer.classList.contains("show");
+
+          // Close all other answers
+          document.querySelectorAll(".faq-answer").forEach((item) => {
+            item.classList.remove("show");
+          });
+          document.querySelectorAll(".faq-question").forEach((item) => {
+            item.classList.remove("active");
+          });
+
+          // Toggle current answer
+          if (!isOpen) {
+            answer.classList.add("show");
+            question.classList.add("active");
+          }
+        });
+      });
+
+      // Form Submission
+      const form = document.getElementById("support-form");
+      const formSuccess = document.getElementById("form-success");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Simulate form submission
+        setTimeout(() => {
+          formSuccess.style.display = "block";
+          form.reset();
+
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            formSuccess.style.display = "none";
+          }, 5000);
+        }, 1000);
+      });
+
+      // Initialize Giscus for community discussions
+      // This would be replaced with actual Giscus initialization code
+      const giscusScript = document.createElement("script");
+      giscusScript.src = "https://giscus.app/client.js";
+      giscusScript.setAttribute("data-repo", "debilla/zylobin-community");
+      giscusScript.setAttribute("data-repo-id", "R_kgDOOJzi3Q");
+      giscusScript.setAttribute("data-category", "General");
+      giscusScript.setAttribute("data-category-id", "DIC_kwDOOJzi3c4CoIKo");
+      giscusScript.setAttribute("data-mapping", "pathname");
+      giscusScript.setAttribute("data-reactions-enabled", "1");
+      giscusScript.setAttribute("data-emit-metadata", "0");
+      giscusScript.setAttribute("data-theme", "light");
+      giscusScript.setAttribute("data-lang", "en");
+      giscusScript.crossOrigin = "anonymous";
+      giscusScript.async = true;
+
+      document.querySelector(".giscus").appendChild(giscusScript);
+    </script>
+  </body>
+</html>
