@@ -1,1055 +1,1151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Zylobin - Smart Waste Management & Recycling Solutions | Sustainable
-      Collection
-    </title>
-    <meta
-      name="description"
-      content="Zylobin connects consumers with local waste collectors through a digital platform. Track recyclables, schedule pickups, and contribute to cleaner cities. Download our app today!"
-    />
-    <meta
-      name="keywords"
-      content="waste management, recycling app, sustainable waste, waste collection, digital waste bins, recyclable waste"
-    />
-
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta
-      property="og:title"
-      content="Zylobin - Smart Waste Management Solutions"
-    />
-    <meta
-      property="og:description"
-      content="Connect with local collectors, track your recyclables, and make your city cleaner with our waste management platform."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://zylobin.com" />
-    <meta
-      property="og:image"
-      content="https://zylobin.com/assets/og-image.jpg"
-    />
-
-    <!-- Twitter Card Data -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Zylobin - Smart Waste Management Solutions"
-    />
-    <meta
-      name="twitter:description"
-      content="Connect with local collectors, track your recyclables, and make your city cleaner with our waste management platform."
-    />
-    <meta
-      name="twitter:image"
-      content="https://zylobin.com/assets/twitter-image.jpg"
-    />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://zylobin.com" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-
-    <style>
-      :root {
-        --primary: #2ecc71;
-        --secondary: #27ae60;
-        --dark: #2c3e50;
-        --light: #ecf0f1;
-        --accent: #3498db;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      body {
-        color: var(--dark);
-        background-color: var(--light);
-        line-height: 1.6;
-      }
-
-      header {
-        background-color: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        position: fixed;
-        width: 100%;
-        z-index: 100;
-      }
-
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 5%;
-      }
-
-      .logo {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--primary);
-        display: flex;
-        align-items: center;
-      }
-
-      .logo img {
-        width: 120px;
-        height: 60px;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 8px;
-        alt: "Zylobin waste management logo";
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 2rem;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--dark);
-        font-weight: 500;
-        transition: color 0.3s;
-      }
-
-      .nav-links a:hover {
-        color: var(--primary);
-      }
-
-      .cta-button {
-        background-color: var(--primary);
-        color: white;
-        border: none;
-        padding: 0.8rem 1.5rem;
-        border-radius: 5px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-
-      .cta-button:hover {
-        background-color: var(--secondary);
-      }
-
-      .hero {
-        padding: 10rem 5% 5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        background-color: white;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-
-      .hero p {
-        font-size: 1.2rem;
-        max-width: 800px;
-        margin-bottom: 2rem;
-      }
-
-      .features {
-        padding: 5rem 5%;
-        background-color: var(--light);
-      }
-
-      .section-title {
-        text-align: center;
-        margin-bottom: 3rem;
-        font-size: 2.2rem;
-      }
-
-      .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      .feature-card {
-        background-color: white;
-        border-radius: 10px;
-        padding: 2rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s;
-      }
-
-      .feature-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .feature-icon {
-        font-size: 2.5rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
-      }
-
-      .feature-card h3 {
-        margin-bottom: 1rem;
-      }
-
-      .solutions {
-        padding: 5rem 5%;
-        background-color: white;
-      }
-
-      .solution-tabs {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
-      }
-
-      .tab-button {
-        background-color: var(--light);
-        border: none;
-        padding: 0.8rem 1.5rem;
-        border-radius: 5px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-
-      .tab-button.active {
-        background-color: var(--primary);
-        color: white;
-      }
-
-      .tab-content {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      .tab-content-collectors {
-        display: none;
-      }
-
-      .tab-image {
-        flex: 1;
-        border-radius: 10px;
-        overflow: hidden;
-        display: flex;
-      }
-
-      .tab-image img {
-        width: 50%;
-        padding: 10px;
-        height: 50%;
-        display: block;
-      }
-
-      .tab-info {
-        flex: 1;
-      }
-
-      .subscription-plans {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
-      }
-
-      .plan-card {
-        background-color: var(--light);
-        border-radius: 10px;
-        padding: 1.5rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s;
-        border: 2px solid transparent;
-      }
-
-      .plan-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .plan-card.featured {
-        border-color: var(--primary);
-        position: relative;
-      }
-
-      .plan-card.featured::after {
-        content: "Popular";
-        position: absolute;
-        top: -10px;
-        right: 20px;
-        background-color: var(--primary);
-        color: white;
-        padding: 0.2rem 0.8rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 600;
-      }
-
-      .plan-name {
-        font-size: 1.4rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        color: var(--primary);
-      }
-
-      .plan-price {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-
-      .plan-price span {
-        font-size: 1rem;
-        color: #777;
-      }
-
-      .plan-features {
-        list-style: none;
-        margin-bottom: 1.5rem;
-      }
-
-      .plan-features li {
-        margin-bottom: 0.5rem;
-        padding-left: 1.5rem;
-        position: relative;
-      }
-
-      .plan-features li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--primary);
-        font-weight: 700;
-      }
-
-      .highlight {
-        font-weight: 600;
-        color: var(--primary);
-      }
-
-      .how-it-works {
-        padding: 5rem 5%;
-        background-color: var(--light);
-      }
-
-      .steps {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .step {
-        display: flex;
-        align-items: flex-start;
-        gap: 1rem;
-        max-width: 300px;
-      }
-
-      .step-number {
-        background-color: var(--primary);
-        color: white;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        font-weight: 700;
-        flex-shrink: 0;
-      }
-
-      .cta {
-        padding: 5rem 5%;
-        background-color: var(--primary);
-        color: white;
-        text-align: center;
-      }
-
-      .cta h2 {
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
-      }
-
-      .cta p {
-        max-width: 800px;
-        margin: 0 auto 2rem;
-        font-size: 1.2rem;
-      }
-
-      .cta-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      .secondary-button {
-        background-color: yellow;
-        color: var(--primary);
-        border: none;
-        padding: 0.8rem 1.5rem;
-        border-radius: 5px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-
-      footer {
-        background-color: var(--dark);
-        color: white;
-        padding: 3rem 5%;
-      }
-
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 2rem;
-      }
-
-      .footer-column {
-        flex: 1;
-        min-width: 200px;
-      }
-
-      .footer-column h3 {
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
-      }
-
-      .footer-links {
-        list-style: none;
-      }
-
-      .footer-links li {
-        margin-bottom: 0.5rem;
-      }
-
-      .footer-links a {
-        color: var(--light);
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .footer-links a:hover {
-        color: var(--primary);
-      }
-
-      .social-links {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .social-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: var(--light);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        color: var(--dark);
-        transition: background-color 0.3s;
-      }
-
-      .social-icon:hover {
-        background-color: var(--primary);
-        color: white;
-      }
-
-      .copyright {
-        text-align: center;
-        padding-top: 2rem;
-        margin-top: 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      /* Added structured data styles */
-      .schema-data {
-        display: none;
-      }
-
-      /* Added accessibility styles */
-      .skip-to-content {
-        position: absolute;
-        left: -9999px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-
-      .skip-to-content:focus {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: auto;
-        height: auto;
-        padding: 10px;
-        background: var(--primary);
-        color: white;
-        z-index: 999;
-      }
-
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-        }
-
-        .hero h1 {
-          font-size: 2.2rem;
-        }
-
-        .tab-content {
-          flex-direction: column;
-        }
-      }
-    </style>
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-RWVH7E34HM"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-RWVH7E34HM");
-    </script>
-
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4067803003775557"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Zylobin",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Android, iOS",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "A digital waste management platform connecting users with local waste collectors for sustainable recycling and waste management."
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Zylobin",
-        "url": "https://zylobin.com",
-        "logo": "https://zylobin.com/assets/logo.png",
-        "sameAs": [
-          "https://www.facebook.com/profile.php?id=61573612832998",
-          "https://x.com/zylobin20435",
-          "https://www.linkedin.com/company/zylobin",
-          "https://www.instagram.com/zylobin"
-        ]
-      }
-    </script>
-  </head>
-  <body>
-    <!-- Accessibility Skip Link -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
-
-    <header>
-      <nav aria-label="Main navigation">
-        <div class="logo">
-          <a href="/" aria-label="Zylobin Home">
-            <img
-              src="assets/logo.png"
-              alt="Zylobin waste management logo"
-              width="120"
-              height="60"
-            />
-          </a>
-        </div>
-        <div class="nav-links">
-          <a href="#features">Features</a>
-          <a href="#solutions">Solutions</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#faq">FAQs</a>
-          <a href="/support.html">Support</a>
-        </div>
-        <button class="cta-button" aria-label="Start using Zylobin">
-          Get Started
-        </button>
-      </nav>
-    </header>
-
-    <main id="main-content">
-      <section class="hero">
-        <h1>Smart Sustainable Waste Management Solutions</h1>
-        <p>
-          Zylobin is a comprehensive digital waste management platform
-          connecting eco-conscious consumers with local collectors. Track your
-          recyclables, schedule convenient pickups, and contribute to cleaner,
-          more sustainable cities.
-        </p>
-        <div class="cta-buttons">
-          <a class="cta-button">Download App</a>
-          <a href="https://dashboard.zylobin.com/" class="cta-button"
-            >Collector Sign Up</a
-          >
-        </div>
-      </section>
-
-      <section id="features" class="features">
-        <h2 class="section-title">Why Choose Zylobin for Recycling?</h2>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">📱</div>
-            <h3>Digital Recycling Bins at Your Fingertips</h3>
-            <p>
-              Easily categorize and track recyclable waste items in different
-              digital bins through our intuitive mobile app - organize plastic,
-              paper, glass, and more.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🚚</div>
-            <h3>Convenient Waste Pickups</h3>
-            <p>
-              Schedule on-demand pickups from local collection partners or find
-              drop-off locations at registered collection centers near your
-              neighborhood.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">📊</div>
-            <h3>Track Your Environmental Impact</h3>
-            <p>
-              Monitor your recycling habits with detailed metrics and see the
-              positive environmental impact you're making on carbon reduction
-              and sustainability.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🌍</div>
-            <h3>Sustainable City Solutions</h3>
-            <p>
-              Contribute to eco-friendly waste management practices and help
-              create cleaner, greener urban environments for future generations.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">💼</div>
-            <h3>Waste Management B2B Dashboard</h3>
-            <p>
-              Waste collectors gain access to powerful data analytics, route
-              optimization tools, and customer management solutions.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🔄</div>
-            <h3>Complete Recycling Ecosystem</h3>
-            <p>
-              A comprehensive platform connecting environmentally conscious
-              consumers, professional waste collectors, and certified recycling
-              centers in one integrated system.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="solutions" class="solutions">
-        <h2 class="section-title">Sustainable Waste Management Solutions</h2>
-        <div class="solution-tabs" role="tablist">
-          <button
-            class="tab-button active"
-            id="consumer-tab"
-            role="tab"
-            aria-selected="true"
-            aria-controls="consumer-content"
-          >
-            For Consumers
-          </button>
-          <button
-            class="tab-button"
-            id="collector-tab"
-            role="tab"
-            aria-selected="false"
-            aria-controls="collector-content"
-          >
-            For Waste Collectors
-          </button>
-        </div>
-        <div
-          class="tab-content"
-          id="consumer-content"
-          role="tabpanel"
-          aria-labelledby="consumer-tab"
-        >
-          <div class="tab-image">
-            <img
-              src="assets/mobile.png"
-              alt="Zylobin mobile app interface showing digital waste bin categories"
-              width="300"
-              height="600"
-              loading="lazy"
-            />
-            <img
-              src="assets/mobile-map.png"
-              alt="Zylobin app map view showing nearby recycling collection points"
-              width="300"
-              height="600"
-              loading="lazy"
-            />
-          </div>
-          <div class="tab-info">
-            <h3>Zylobin Recycling Consumer App</h3>
-            <p>
-              Our intuitive mobile application helps you manage waste
-              sustainably:
-            </p>
-            <ul>
-              <li>
-                Create and manage digital waste bins by recyclable category
-              </li>
-              <li>Record recyclable items with a simple barcode scan</li>
-              <li>Find nearby eco-friendly collection centers</li>
-              <li>Schedule convenient pickup times from local collectors</li>
-              <li>
-                Track your recycling history and personal environmental impact
-              </li>
-              <li>Earn green rewards for consistent recycling habits</li>
-            </ul>
-            <button class="cta-button">Download Recycling App</button>
-          </div>
-        </div>
-
-        <div
-          class="tab-content tab-content-collectors"
-          id="collector-content"
-          role="tabpanel"
-          aria-labelledby="collector-tab"
-          hidden
-        >
-          <div class="tab-info">
-            <h3>Zylobin Waste Collector Platform</h3>
-            <p>
-              Our subscription-based B2B platform empowers waste collection
-              businesses with:
-            </p>
-            <ul>
-              <li>
-                Real-time recyclable waste tracking and analytics dashboard
-              </li>
-              <li>
-                Smart route optimization for efficient collections and reduced
-                carbon footprint
-              </li>
-              <li>
-                Comprehensive dashboard for monitoring user activity and waste
-                accumulation
-              </li>
-              <li>
-                Seamless integration with your existing collection operations
-              </li>
-            </ul>
-
-            <h4 style="margin-top: 20px; margin-bottom: 10px">
-              Choose Your Waste Management Subscription Plan
-            </h4>
-
-            <div class="subscription-plans">
-              <div class="plan-card">
-                <div class="plan-name">Free Trial</div>
-                <div class="plan-price">$0<span>/month</span></div>
-                <ul class="plan-features">
-                  <li>Access to basic waste management dashboard</li>
-                  <li>
-                    <span class="highlight">1 collection points</span>
-                    management
-                  </li>
-                  <li>Weekly recycling data reports</li>
-                  <li>Email customer support</li>
-                </ul>
-                <button class="cta-button">Start Free Trial</button>
-              </div>
-
-              <div class="plan-card">
-                <div class="plan-name">Starter Plan</div>
-                <div class="plan-price">$249<span>/month</span></div>
-                <ul class="plan-features">
-                  <li>Access to basic collection dashboard</li>
-                  <li>
-                    View up to
-                    <span class="highlight">500 recycling users</span> in your
-                    service area
-                  </li>
-                  <li>
-                    <span class="highlight">10 collection points</span>
-                    management
-                  </li>
-                  <li>Basic collection route optimization</li>
-                  <li>Weekly waste analytics reports</li>
-                  <li>Priority email support</li>
-                </ul>
-                <button class="cta-button">Start Collection Business</button>
-              </div>
-
-              <div class="plan-card featured">
-                <div class="plan-name">Professional Collector</div>
-                <div class="plan-price">$999<span>/month</span></div>
-                <ul class="plan-features">
-                  <li>Advanced waste analytics dashboard</li>
-                  <li>
-                    View up to
-                    <span class="highlight">20,000 recycling users</span> in
-                    your service area
-                  </li>
-                  <li>
-                    <span class="highlight">50 collection points</span>
-                    management
-                  </li>
-                  <li>Advanced route optimization for fuel efficiency</li>
-                  <li>Real-time recyclable waste tracking</li>
-                  <li>Daily data reports and insights</li>
-                  <li>Priority phone and email support</li>
-                </ul>
-                <button class="cta-button">Upgrade Collection Business</button>
-              </div>
-
-              <div class="plan-card">
-                <div class="plan-name">Enterprise Waste Management</div>
-                <div class="plan-price"><span>Contact our team</span></div>
-                <ul class="plan-features">
-                  <li>Full-featured waste management dashboard</li>
-                  <li>
-                    <span class="highlight">Unlimited users</span> visibility
-                  </li>
-                  <li>
-                    <span class="highlight">Unlimited collection points</span>
-                  </li>
-                  <li>AI-powered route optimization for maximum efficiency</li>
-                  <li>Predictive waste analytics and forecasting</li>
-                  <li>Custom reporting and business intelligence</li>
-                  <li>API integrations with existing systems</li>
-                  <li>24/7 dedicated customer support</li>
-                </ul>
-                <button class="cta-button">Contact Enterprise Sales</button>
-              </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Zylobin - Empowering Everyone to Collect Waste | Sustainable
+            Recycling Network
+        </title>
+        <meta
+            name="description"
+            content="Zylobin empowers anyone to become a waste collector. Log collections, find drop-off points, and connect with registered recycling centers. Download our app today!"
+        />
+        <meta
+            name="keywords"
+            content="waste collection app, community recycling, citizen collectors, waste drop-off points, sustainable waste, recycling network"
+        />
+
+        <!-- Open Graph / Social Media Meta Tags -->
+        <meta
+            property="og:title"
+            content="Zylobin - Everyone Can Be a Waste Collector"
+        />
+        <meta
+            property="og:description"
+            content="Collect waste, find drop-off points, and contribute to a cleaner world with our community-driven waste collection platform."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://zylobin.com" />
+        <meta
+            property="og:image"
+            content="https://zylobin.com/assets/og-image.jpg"
+        />
+
+        <!-- Twitter Card Data -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Zylobin - Everyone Can Be a Waste Collector"
+        />
+        <meta
+            name="twitter:description"
+            content="Collect waste, find drop-off points, and contribute to a cleaner world with our community-driven waste collection platform."
+        />
+        <meta
+            name="twitter:image"
+            content="https://zylobin.com/assets/twitter-image.jpg"
+        />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://zylobin.com" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="apple-touch-icon.png"
+        />
+
+        <style>
+            :root {
+                --primary: #2ecc71;
+                --secondary: #27ae60;
+                --dark: #2c3e50;
+                --light: #ecf0f1;
+                --accent: #3498db;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                color: var(--dark);
+                background-color: var(--light);
+                line-height: 1.6;
+            }
+
+            header {
+                background-color: white;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                position: fixed;
+                width: 100%;
+                z-index: 100;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 5%;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+                font-weight: 700;
+                color: var(--primary);
+                display: flex;
+                align-items: center;
+            }
+
+            .logo img {
+                width: 120px;
+                height: 60px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 8px;
+                alt: "Zylobin waste collection logo";
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 2rem;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                color: var(--dark);
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+            .nav-links a:hover {
+                color: var(--primary);
+            }
+
+            .cta-button {
+                background-color: var(--primary);
+                color: white;
+                border: none;
+                padding: 0.8rem 1.5rem;
+                border-radius: 5px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .cta-button:hover {
+                background-color: var(--secondary);
+            }
+
+            .hero {
+                padding: 10rem 5% 5rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                background-color: white;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                max-width: 800px;
+                margin-bottom: 2rem;
+            }
+
+            .features {
+                padding: 5rem 5%;
+                background-color: var(--light);
+            }
+
+            .section-title {
+                text-align: center;
+                margin-bottom: 3rem;
+                font-size: 2.2rem;
+            }
+
+            .feature-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+
+            .feature-card {
+                background-color: white;
+                border-radius: 10px;
+                padding: 2rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s;
+            }
+
+            .feature-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .feature-icon {
+                font-size: 2.5rem;
+                color: var(--primary);
+                margin-bottom: 1rem;
+            }
+
+            .feature-card h3 {
+                margin-bottom: 1rem;
+            }
+
+            .solutions {
+                padding: 5rem 5%;
+                background-color: white;
+            }
+
+            .solution-tabs {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .tab-button {
+                background-color: var(--light);
+                border: none;
+                padding: 0.8rem 1.5rem;
+                border-radius: 5px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .tab-button.active {
+                background-color: var(--primary);
+                color: white;
+            }
+
+            .tab-content {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .tab-content-collectors {
+                display: none;
+            }
+
+            .tab-image {
+                flex: 1;
+                border-radius: 10px;
+                overflow: hidden;
+                display: flex;
+            }
+
+            .tab-image img {
+                width: 50%;
+                padding: 10px;
+                height: 50%;
+                display: block;
+            }
+
+            .tab-info {
+                flex: 1;
+            }
+
+            .subscription-plans {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .plan-card {
+                background-color: var(--light);
+                border-radius: 10px;
+                padding: 1.5rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s;
+                border: 2px solid transparent;
+            }
+
+            .plan-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .plan-card.featured {
+                border-color: var(--primary);
+                position: relative;
+            }
+
+            .plan-card.featured::after {
+                content: "Popular";
+                position: absolute;
+                top: -10px;
+                right: 20px;
+                background-color: var(--primary);
+                color: white;
+                padding: 0.2rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+
+            .plan-name {
+                font-size: 1.4rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                color: var(--primary);
+            }
+
+            .plan-price {
+                font-size: 2rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+
+            .plan-price span {
+                font-size: 1rem;
+                color: #777;
+            }
+
+            .plan-features {
+                list-style: none;
+                margin-bottom: 1.5rem;
+            }
+
+            .plan-features li {
+                margin-bottom: 0.5rem;
+                padding-left: 1.5rem;
+                position: relative;
+            }
+
+            .plan-features li::before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                color: var(--primary);
+                font-weight: 700;
+            }
+
+            .highlight {
+                font-weight: 600;
+                color: var(--primary);
+            }
+
+            .how-it-works {
+                padding: 5rem 5%;
+                background-color: var(--light);
+            }
+
+            .steps {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .step {
+                display: flex;
+                align-items: flex-start;
+                gap: 1rem;
+                max-width: 300px;
+            }
+
+            .step-number {
+                background-color: var(--primary);
+                color: white;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                font-weight: 700;
+                flex-shrink: 0;
+            }
+
+            .cta {
+                padding: 5rem 5%;
+                background-color: var(--primary);
+                color: white;
+                text-align: center;
+            }
+
+            .cta h2 {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta p {
+                max-width: 800px;
+                margin: 0 auto 2rem;
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .secondary-button {
+                background-color: yellow;
+                color: var(--primary);
+                border: none;
+                padding: 0.8rem 1.5rem;
+                border-radius: 5px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            footer {
+                background-color: var(--dark);
+                color: white;
+                padding: 3rem 5%;
+            }
+
+            .footer-content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 2rem;
+            }
+
+            .footer-column {
+                flex: 1;
+                min-width: 200px;
+            }
+
+            .footer-column h3 {
+                margin-bottom: 1rem;
+                font-size: 1.2rem;
+            }
+
+            .footer-links {
+                list-style: none;
+            }
+
+            .footer-links li {
+                margin-bottom: 0.5rem;
+            }
+
+            .footer-links a {
+                color: var(--light);
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .footer-links a:hover {
+                color: var(--primary);
+            }
+
+            .social-links {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: var(--light);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                color: var(--dark);
+                transition: background-color 0.3s;
+            }
+
+            .social-icon:hover {
+                background-color: var(--primary);
+                color: white;
+            }
+
+            .copyright {
+                text-align: center;
+                padding-top: 2rem;
+                margin-top: 2rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            /* Added structured data styles */
+            .schema-data {
+                display: none;
+            }
+
+            /* Added accessibility styles */
+            .skip-to-content {
+                position: absolute;
+                left: -9999px;
+                top: auto;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+            }
+
+            .skip-to-content:focus {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: auto;
+                height: auto;
+                padding: 10px;
+                background: var(--primary);
+                color: white;
+                z-index: 999;
+            }
+
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                }
+
+                .hero h1 {
+                    font-size: 2.2rem;
+                }
+
+                .tab-content {
+                    flex-direction: column;
+                }
+            }
+        </style>
+
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-RWVH7E34HM"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-RWVH7E34HM");
+        </script>
+
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4067803003775557"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "Zylobin",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Android, iOS",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "description": "A digital platform that empowers anyone to become a waste collector, connecting citizen collectors with registered recycling centers."
+            }
+        </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Zylobin",
+                "url": "https://zylobin.com",
+                "logo": "https://zylobin.com/assets/logo.png",
+                "sameAs": [
+                    "https://www.facebook.com/profile.php?id=61573612832998",
+                    "https://x.com/zylobin20435",
+                    "https://www.linkedin.com/company/zylobin",
+                    "https://www.instagram.com/zylobin"
+                ]
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Accessibility Skip Link -->
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+        <header>
+            <nav aria-label="Main navigation">
+                <div class="logo">
+                    <a href="/" aria-label="Zylobin Home">
+                        <img
+                            src="assets/logo.png"
+                            alt="Zylobin waste collection logo"
+                            width="120"
+                            height="60"
+                        />
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#solutions">Solutions</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#faq">FAQs</a>
+                    <a href="/support.html">Support</a>
+                </div>
+                <button class="cta-button" aria-label="Start using Zylobin">
+                    Get Started
+                </button>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section class="hero">
+                <h1>Everyone Can Join the Recycling Movement</h1>
+                <p>
+                    Zylobin empowers individuals to actively participate in
+                    waste collection. Log your collections, find nearby drop-off
+                    points, and contribute to a cleaner environment. Connect
+                    with registered recycling centers and be part of a community
+                    solving waste challenges together.
+                </p>
+                <div class="cta-buttons">
+                    <a class="cta-button">Download Collector App</a>
+                    <a href="https://dashboard.zylobin.com/" class="cta-button"
+                        >Register Collection Point</a
+                    >
+                </div>
+            </section>
+
+            <section id="features" class="features">
+                <h2 class="section-title">Why Collect Waste with Zylobin?</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">📱</div>
+                        <h3>Simple Waste Collection Tracking</h3>
+                        <p>
+                            Easily log and track the waste you collect through
+                            our intuitive mobile app - categorize plastic,
+                            paper, glass, and more as you help clean your
+                            community.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🔍</div>
+                        <h3>Find Nearby Drop-off Points</h3>
+                        <p>
+                            Discover the closest registered collection points to
+                            drop off your collected waste. Filter by accepted
+                            materials and operating hours.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">📊</div>
+                        <h3>Track Your Collection Impact</h3>
+                        <p>
+                            Monitor your waste collection statistics with
+                            detailed metrics and see the positive environmental
+                            impact you're making through your collection
+                            efforts.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🌍</div>
+                        <h3>Join a Community of Collectors</h3>
+                        <p>
+                            Connect with other waste collectors in your area,
+                            participate in collection events, and share tips for
+                            more effective waste gathering.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">💼</div>
+                        <h3>Collection Point Management</h3>
+                        <p>
+                            For registered recyclers: Create and manage your
+                            collection points with a powerful dashboard showing
+                            incoming materials and collector activity.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🔄</div>
+                        <h3>Complete Collection Ecosystem</h3>
+                        <p>
+                            A comprehensive platform connecting citizen waste
+                            collectors with registered recycling centers in one
+                            integrated system that helps materials reach the
+                            right destination.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="solutions" class="solutions">
+                <h2 class="section-title">Waste Collection Solutions</h2>
+                <div class="solution-tabs" role="tablist">
+                    <button
+                        class="tab-button active"
+                        id="collector-tab"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="collector-content"
+                    >
+                        For Citizen Collectors
+                    </button>
+                    <button
+                        class="tab-button"
+                        id="center-tab"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="center-content"
+                    >
+                        For Recycling Centers
+                    </button>
+                </div>
+                <div
+                    class="tab-content"
+                    id="collector-content"
+                    role="tabpanel"
+                    aria-labelledby="collector-tab"
+                >
+                    <div class="tab-image">
+                        <img
+                            src="assets/mobile.png"
+                            alt="Zylobin mobile app interface showing waste collection tracking"
+                            width="300"
+                            height="600"
+                            loading="lazy"
+                        />
+                        <img
+                            src="assets/mobile-map.png"
+                            alt="Zylobin app map view showing nearby drop-off collection points"
+                            width="300"
+                            height="600"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div class="tab-info">
+                        <h3>Zylobin Collector App</h3>
+                        <p>
+                            Our intuitive mobile application helps you collect
+                            waste effectively:
+                        </p>
+                        <ul>
+                            <li>
+                                Log and track waste you collect by category and
+                                weight
+                            </li>
+                            <li>
+                                Find the nearest drop-off points for your
+                                collected materials
+                            </li>
+                            <li>
+                                See operating hours and accepted materials at
+                                each collection point
+                            </li>
+                            <li>
+                                Track your collection history and environmental
+                                impact
+                            </li>
+                            <li>
+                                Connect with other collectors in your community
+                            </li>
+                            <li>
+                                Earn rewards and recognition for your collection
+                                efforts
+                            </li>
+                        </ul>
+                        <button class="cta-button">
+                            Download Collector App
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="tab-content tab-content-collectors"
+                    id="center-content"
+                    role="tabpanel"
+                    aria-labelledby="center-tab"
+                    hidden
+                >
+                    <div class="tab-info">
+                        <h3>Zylobin Recycling Center Platform</h3>
+                        <p>
+                            Our subscription-based platform for recycling
+                            centers and collection points:
+                        </p>
+                        <ul>
+                            <li>
+                                Create and manage your collection point profiles
+                                on the app
+                            </li>
+                            <li>
+                                Track incoming materials from community
+                                collectors
+                            </li>
+                            <li>
+                                Manage operating hours and acceptable material
+                                types
+                            </li>
+                            <li>
+                                Access analytics on collection volumes and
+                                community engagement
+                            </li>
+                        </ul>
+
+                        <h4 style="margin-top: 20px; margin-bottom: 10px">
+                            Choose Your Collection Point Subscription Plan
+                        </h4>
+
+                        <div class="subscription-plans">
+                            <div class="plan-card">
+                                <div class="plan-name">Free Trial</div>
+                                <div class="plan-price">
+                                    $0<span>/month</span>
+                                </div>
+                                <ul class="plan-features">
+                                    <li>Register one collection point</li>
+                                    <li>Basic incoming materials tracking</li>
+                                    <li>Weekly collection data reports</li>
+                                    <li>Email customer support</li>
+                                </ul>
+                                <button class="cta-button">
+                                    Start Free Trial
+                                </button>
+                            </div>
+
+                            <div class="plan-card">
+                                <div class="plan-name">Basic Point</div>
+                                <div class="plan-price">
+                                    $99<span>/month</span>
+                                </div>
+                                <ul class="plan-features">
+                                    <li>Register up to 2 collection points</li>
+                                    <li>
+                                        Track materials from
+                                        <span class="highlight"
+                                            >500 collectors</span
+                                        >
+                                        in your area
+                                    </li>
+                                    <li>
+                                        Detailed material category breakdowns
+                                    </li>
+                                    <li>Basic community engagement tools</li>
+                                    <li>Weekly analytics reports</li>
+                                    <li>Priority email support</li>
+                                </ul>
+                                <button class="cta-button">
+                                    Register Collection Point
+                                </button>
+                            </div>
+
+                            <div class="plan-card featured">
+                                <div class="plan-name">Professional Center</div>
+                                <div class="plan-price">
+                                    $499<span>/month</span>
+                                </div>
+                                <ul class="plan-features">
+                                    <li>Register up to 5 collection points</li>
+                                    <li>
+                                        Track materials from
+                                        <span class="highlight"
+                                            >unlimited collectors</span
+                                        >
+                                        in your area
+                                    </li>
+                                    <li>
+                                        Advanced material analytics dashboard
+                                    </li>
+                                    <li>
+                                        Collector engagement and reward tools
+                                    </li>
+                                    <li>
+                                        Coming soon: Direct waste pickup
+                                        scheduling
+                                    </li>
+                                    <li>Real-time collection data</li>
+                                    <li>Priority phone and email support</li>
+                                </ul>
+                                <button class="cta-button">
+                                    Upgrade Collection Center
+                                </button>
+                            </div>
+
+                            <div class="plan-card">
+                                <div class="plan-name">Enterprise Network</div>
+                                <div class="plan-price">
+                                    <span>Contact our team</span>
+                                </div>
+                                <ul class="plan-features">
+                                    <li>
+                                        Register unlimited collection points
+                                    </li>
+                                    <li>
+                                        Full network visibility across all
+                                        locations
+                                    </li>
+                                    <li>
+                                        Advanced analytics and reporting tools
+                                    </li>
+                                    <li>
+                                        Custom branding for collection centers
+                                    </li>
+                                    <li>
+                                        Priority access to future direct pickup
+                                        features
+                                    </li>
+                                    <li>
+                                        API integrations with existing systems
+                                    </li>
+                                    <li>24/7 dedicated customer support</li>
+                                </ul>
+                                <button class="cta-button">
+                                    Contact Enterprise Sales
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="how-it-works" class="how-it-works">
+                <h2 class="section-title">How Zylobin Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">1</div>
+                        <div>
+                            <h3>Download & Register</h3>
+                            <p>
+                                Get the Zylobin app on your smartphone and
+                                create your collector account in just minutes.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">2</div>
+                        <div>
+                            <h3>Collect & Log Waste</h3>
+                            <p>
+                                Collect waste in your community and log it in
+                                the app by material type (plastic, paper, glass,
+                                metal, e-waste, and more).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">3</div>
+                        <div>
+                            <h3>Find Drop-off Points</h3>
+                            <p>
+                                Use the app to locate the nearest registered
+                                collection points where you can drop off your
+                                collected materials.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">4</div>
+                        <div>
+                            <h3>Track Your Impact</h3>
+                            <p>
+                                View your detailed collection statistics and
+                                personal environmental contribution on your
+                                personalized sustainability dashboard.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Added FAQ Section for SEO -->
+            <section id="faq" class="features">
+                <h2 class="section-title">
+                    Frequently Asked Questions About Waste Collection
+                </h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>What types of waste can I collect with Zylobin?</h3>
+                        <p>
+                            Zylobin supports collection and tracking of most
+                            common materials including plastic, paper,
+                            cardboard, glass, metal, e-waste, textiles, and in
+                            some locations, organic waste. The app will show
+                            which materials are accepted at nearby collection
+                            points.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>How much does the Zylobin collector app cost?</h3>
+                        <p>
+                            The Zylobin collector app is completely free to
+                            download and use for all waste collectors. There are
+                            no fees for logging your collections or finding
+                            drop-off points. Only registered collection centers
+                            require subscription plans.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>How do I find collection points near me?</h3>
+                        <p>
+                            The Zylobin app includes an interactive map showing
+                            all registered collection points in your area. You
+                            can filter by distance, accepted materials, and
+                            operating hours to find the most convenient location
+                            to drop off your collected waste.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>
+                            How do I register my business as a collection point?
+                        </h3>
+                        <p>
+                            Recycling businesses can register through our
+                            Collection Point Portal. After verification of your
+                            business credentials and location details, you'll
+                            gain access to our platform and can choose from our
+                            subscription plans to manage your collection
+                            point(s).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta">
+                <h2>Join the Zylobin Collection Community Today</h2>
+                <p>
+                    Be part of the sustainable solution where anyone can help
+                    collect waste and build cleaner, greener communities for
+                    future generations.
+                </p>
+                <div class="cta-buttons">
+                    <button class="secondary-button">
+                        Download Free Collector App
+                    </button>
+                    <button class="secondary-button">
+                        Register as Collection Point
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Zylobin</h3>
+                    <p>
+                        Empowering everyone to collect waste and connect with
+                        recycling centers through innovative technology and
+                        community engagement.
+                    </p>
+                    <div class="social-links">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=61573612832998"
+                            class="social-icon"
+                            aria-label="Facebook"
+                            >f</a
+                        >
+                        <a
+                            href="https://x.com/zylobin20435"
+                            class="social-icon"
+                            aria-label="X (Twitter)"
+                            >x</a
+                        >
+                        <a
+                            href="https://www.linkedin.com/company/zylobin"
+                            class="social-icon"
+                            aria-label="LinkedIn"
+                            >in</a
+                        >
+                        <a href="#" class="social-icon" aria-label="Instagram"
+                            >ig</a
+                        >
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Collection Solutions</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Citizen Collector App</a></li>
+                        <li><a href="#">Collection Point Platform</a></li>
+                        <li><a href="#">Enterprise Solutions</a></li>
+                        <li><a href="#">Materials Pricing</a></li>
+                        <li><a href="#">Collection Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Waste Collection Guide</a></li>
+                        <li><a href="#">Recycling Best Practices</a></li>
+                        <li><a href="#">Collection Point Directory</a></li>
+                        <li><a href="#">Community Events</a></li>
+                        <li><a href="#">Environmental Impact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Zylobin</a></li>
+                        <li><a href="#">Our Mission</a></li>
+                        <li><a href="#">Join Our Team</a></li>
+                        <li><a href="#">Press & Media</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="how-it-works" class="how-it-works">
-        <h2 class="section-title">How Zylobin Recycling Works</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number" aria-hidden="true">1</div>
-            <div>
-              <h3>Download & Register For Recycling</h3>
-              <p>
-                Get the Zylobin recycling app on your smartphone and create your
-                eco-friendly account in just minutes.
-              </p>
+            <div class="copyright">
+                <p>&copy; 2025 Zylobin. All rights reserved.</p>
             </div>
-          </div>
-          <div class="step">
-            <div class="step-number" aria-hidden="true">2</div>
-            <div>
-              <h3>Sort Your Recyclable Waste</h3>
-              <p>
-                Use the app to categorize recyclable items into digital bins
-                (plastic, paper, glass, metal, e-waste, and more)
-              </p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number" aria-hidden="true">3</div>
-            <div>
-              <h3>Choose Your Recycling Option</h3>
-              <p>
-                Select a nearby eco-friendly collection center for drop-off or
-                schedule a convenient pickup from our verified collection
-                partners.
-              </p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number" aria-hidden="true">4</div>
-            <div>
-              <h3>Track Your Environmental Impact</h3>
-              <p>
-                View your detailed recycling statistics and personal
-                environmental contribution on your personalized sustainability
-                dashboard.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </footer>
 
-      <!-- Added FAQ Section for SEO -->
-      <section id="faq" class="features">
-        <h2 class="section-title">
-          Frequently Asked Questions About Recycling
-        </h2>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <h3>What types of waste can I recycle with Zylobin?</h3>
-            <p>
-              Zylobin supports recycling of most common materials including
-              plastic, paper, cardboard, glass, metal, e-waste, textiles, and in
-              some locations, organic waste. The app will show which materials
-              are accepted in your area.
-            </p>
-          </div>
-          <div class="feature-card">
-            <h3>How much does the Zylobin consumer app cost?</h3>
-            <p>
-              The Zylobin consumer app is completely free to download and use
-              for all basic recycling management features. Premium features may
-              be available through in-app subscription options.
-            </p>
-          </div>
-          <div class="feature-card">
-            <h3>How quickly can I get a waste pickup scheduled?</h3>
-            <p>
-              Pickup availability varies by location and collector partner
-              schedules. In most urban areas, you can schedule a pickup within
-              24-48 hours, while same-day pickups may be available in some
-              regions.
-            </p>
-          </div>
-          <div class="feature-card">
-            <h3>How do I become a waste collector partner?</h3>
-            <p>
-              Waste collection businesses can register through our Collector
-              Portal. After verification of your business credentials and
-              service areas, you'll gain access to our platform and can choose
-              from our subscription plans.
-            </p>
-          </div>
-        </div>
-      </section>
+        <script>
+            // Simple tab functionality
+            document
+                .getElementById("collector-tab")
+                .addEventListener("click", function () {
+                    document
+                        .getElementById("collector-tab")
+                        .classList.add("active");
+                    document
+                        .getElementById("center-tab")
+                        .classList.remove("active");
+                    document.getElementById("collector-content").style.display =
+                        "flex";
+                    document.getElementById("center-content").style.display =
+                        "none";
+                    document
+                        .getElementById("collector-content")
+                        .removeAttribute("hidden");
+                    document
+                        .getElementById("center-content")
+                        .setAttribute("hidden", "");
+                });
 
-      <section class="cta">
-        <h2>Join the Zylobin Recycling Community Today</h2>
-        <p>
-          Be part of the sustainable solution for eco-friendly waste management
-          and cleaner, greener cities for future generations.
-        </p>
-        <div class="cta-buttons">
-          <button class="secondary-button">Download Free Recycling App</button>
-          <button class="secondary-button">Register as Waste Collector</button>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>Zylobin Recycling</h3>
-          <p>
-            Making waste collection sustainable and our cities cleaner through
-            innovative recycling technology and community engagement.
-          </p>
-          <div class="social-links">
-            <a
-              href="https://www.facebook.com/profile.php?id=61573612832998"
-              class="social-icon"
-              aria-label="Facebook"
-              >f</a
-            >
-            <a
-              href="https://x.com/zylobin20435"
-              class="social-icon"
-              aria-label="X (Twitter)"
-              >x</a
-            >
-            <a
-              href="https://www.linkedin.com/company/zylobin"
-              class="social-icon"
-              aria-label="LinkedIn"
-              >in</a
-            >
-            <a href="#" class="social-icon" aria-label="Instagram">ig</a>
-          </div>
-        </div>
-        <div class="footer-column">
-          <h3>Recycling Solutions</h3>
-          <ul class="footer-links">
-            <li><a href="#">Consumer Recycling App</a></li>
-            <li><a href="#">Waste Collector Platform</a></li>
-            <li><a href="#">Recycling Collection Centers</a></li>
-            <li><a href="#">Enterprise Waste Solutions</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h3>Company</h3>
-          <ul class="footer-links">
-            <li><a href="#">About Zylobin</a></li>
-            <li><a href="#">Our Sustainability Mission</a></li>
-            <li><a href="#">Careers in Recycling</a></li>
-            <li><a href="#">Press & Media</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h3>Support</h3>
-          <ul class="footer-links">
-            <li><a href="#">Recycling Help Center</a></li>
-            <li><a href="#">Contact Support Team</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>
-          &copy; 2025 Zylobin Sustainable Waste Management. All rights reserved.
-        </p>
-      </div>
-    </footer>
-
-    <script>
-      // Tab switching functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const consumerTab = document.getElementById("consumer-tab");
-        const collectorTab = document.getElementById("collector-tab");
-        const consumerContent = document.getElementById("consumer-content");
-        const collectorContent = document.getElementById("collector-content");
-
-        consumerTab.addEventListener("click", function () {
-          consumerTab.classList.add("active");
-          collectorTab.classList.remove("active");
-          consumerContent.style.display = "flex";
-          collectorContent.style.display = "none";
-        });
-
-        collectorTab.addEventListener("click", function () {
-          collectorTab.classList.add("active");
-          consumerTab.classList.remove("active");
-          collectorContent.style.display = "flex";
-          consumerContent.style.display = "none";
-        });
-      });
-    </script>
-  </body>
+            document
+                .getElementById("center-tab")
+                .addEventListener("click", function () {
+                    document
+                        .getElementById("center-tab")
+                        .classList.add("active");
+                    document
+                        .getElementById("collector-tab")
+                        .classList.remove("active");
+                    document.getElementById("center-content").style.display =
+                        "flex";
+                    document.getElementById("collector-content").style.display =
+                        "none";
+                    document
+                        .getElementById("center-content")
+                        .removeAttribute("hidden");
+                    document
+                        .getElementById("collector-content")
+                        .setAttribute("hidden", "");
+                });
+        </script>
+    </body>
 </html>
